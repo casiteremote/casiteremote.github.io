@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #fbeed5;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li::marker {
+    content: "-> ";
+}
+
+@font-face {
+    font-family: 'Amalgama';
+    src: url('../fonts/Amalgama-Regular-Minus-R.otf') format('opentype');
+}
+
+.lander {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/lander_hue.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 1;
+}
+
+.home {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f4ebb5;
+    opacity: 1;
+
+    padding: 10vh 10vw;
+}
+
+/* Centered content */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+#background {
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+
+    background-image: url("/img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* width: 100%;
+    height: 100%; */
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    font-family: fixedsys;
+    font-size: 1.7vh;
+    color: #f4ebb5;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+                0 0 10px rgba(255, 255, 255, 0.6),
+                0 0 15px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.row.h-10 { height: 10vh; }
+.row.h-02 { height: 2vh; }
+.row.h-rest { flex:1 1 auto; }
+
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.big-header-logo {
+    font-family: Amalgama;
+    font-size: 3.5vw;
+}
+
+.big-header-logo a {
+    color: #f4ebb5;
+    text-decoration: none;
+}
+
+.big-header-logo img {
+    max-height: 100%; /* Restrict image height to row height */
+    max-width: 100%; /* Restrict image width to row width */
+    object-fit: contain; /* Scale the image without clipping */
+    object-position: center; /* Center the image */
+}
+
+.path-line-content {
+    background-color: #f4ebb5;
+    color: black;
+    mix-blend-mode: lighten;
+
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+    inset 0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.path-line-content a {
+    text-decoration: none;
+}
+
+.works {
+    padding: 2.5vh 0vh;
+    font-size: 3vh;
+}
+
+.button {
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+
+.retroButton {
+    background:none;
+    border:none;
+
+    /* padding: 0.5vh 1vh 0.5vh 1vh; */
+    padding: 1.5vw 1vw;
+
+    color: #f4ebb5;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+                0 0 10px rgba(255, 255, 255, 0.6),
+                0 0 15px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.4);
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.retroButton:hover {
+    /* border: none; */
+    background-color: #f4ebb5;
+    color: black;
+    mix-blend-mode: lighten;
+
+    /* padding: 0.5vh 1vh 0.5vh 1vh; */
+    padding: 1.5vw 1vw;
+
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+    inset 0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.retroButton:active {
+    /* border: none; */
+    background-color: #f4ebb5;
+    color: black;
+    mix-blend-mode: lighten;
+
+    /* padding: 0.5vh 1vh 0.5vh 1vh; */
+    padding: 1.5vw 1vw;
+
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+    inset 0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.visible {
+    opacity: 1;
+}
+
+.info-text .line {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: appear 0.5s ease-out forwards;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.info-text .line a {
+    color: #fbeed5;
+}
+
+.container {
+    border: #f4ebb5;
+    border-style: solid;
+    border-width: 15px;
+    box-sizing: border-box;
+    /* margin: 10px; */
+    position: relative;
+
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+    inset 0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.align-self-end {
+    background-color: #f4ebb5;
+    color: black;
+    mix-blend-mode: lighten;
+
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+    inset 0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.info {
+    padding: 4vh 0vh;
+    /* background-color: #550d45; */
+    /* font-family: Amalgama; */
+}
+
+.link {
+    all: unset;
+    text-decoration: underline;
+    color: inherit;
+    cursor: pointer;
+}
+
+.info-text {
+    font-size: 2vh;
+    /* background-color: red; */
+}
+
+.info-pic {
+    max-height: 60vh;
+    /* background-color: blue; */
+}
+
+.info-pic img {
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    font-size: 8vh;
+    color: #f4ebb5 !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+                0 0 10px rgba(255, 255, 255, 0.6),
+                0 0 15px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.4);
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-indicators button
+{
+    width : 10px !important;
+    height: 10px !important;
+
+    border-top: none !important;
+    border-bottom: none !important;
+    /* border-radius: 100%; */
+    /* margin: 5px !important; */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+    inset 0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+
+}
+
+.carousel-indicators .active {
+    background-color: #f4ebb5 !important;
+}
+
+/* .align-self-end {
+    margin-bottom: 0.2vh;
+} */
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 1s steps(10, end);
+}
+
+.typewriter a {
+    text-decoration: none;
+    /* font-weight: bold; */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 40% }
+}
+
+
+
+
+

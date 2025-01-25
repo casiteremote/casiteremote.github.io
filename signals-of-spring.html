@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/fixedsys-css/css/fixedsys.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>COMMON ALEX / home / Signals Of Spring</title>
+</head>
+
+<body>
+    <div id="background">
+        <div class="container h-100 px-5 py-5 d-flex flex-column">
+            <div class="row align-content-center big-header-logo">
+                <a href="../home.html">Common Alex</a>
+            </div>
+
+            <div class="row h-02 path-line-row">
+                <div class="col-12 align-content-center path-line-content">
+                    <div class="typewriter"><a href="./index.html">c:</a>&nbsp;/&nbsp;<a href="./home.html">home</a>&nbsp;/&nbsp;Signals Of Spring</div>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-stretch info">
+                <div class="col-md-4 info-text">
+                    <span class="line">A 6-part collection of digital collages, capturing nature within abstract urban landscapes.</span><br>
+                    <br>
+                    <span class="line">Made in 2024.</span><br>
+                    <br>
+                </div>
+                <div class="col-md-8 d-flex flex-column info-pic">
+                    <div id="pic-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#pic-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#pic-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#pic-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#pic-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#pic-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#pic-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./img/signals-of-spring/Signals Of Spring 01.jpg" class="d-block w-100 enlarge" alt="01">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/signals-of-spring/Signals Of Spring 02.jpg" class="d-block w-100 enlarge" alt="02">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/signals-of-spring/Signals Of Spring 03.jpg" class="d-block w-100 enlarge" alt="03">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/signals-of-spring/Signals Of Spring 04.jpg" class="d-block w-100 enlarge" alt="04">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/signals-of-spring/Signals Of Spring 05.jpg" class="d-block w-100 enlarge" alt="05">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/signals-of-spring/Signals Of Spring 06.jpg" class="d-block w-100 enlarge" alt="06">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#pic-carousel" data-bs-slide="prev">
+                            &lt;
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#pic-carousel" data-bs-slide="next">
+                            &gt;
+                        </button>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row h-rest footer">
+                <div class="col-12 align-self-end d-flex justify-content-between">
+                    <div class="typewriter"><a href="./other-works.html">&lt;back&gt;</a></div>
+                    <div id="live-time"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fullscreen-overlay" id="fullscreenOverlay">
+        <img src="" alt="Fullscreen Image" id="fullscreenImage">
+    </div>
+
+    <script src="../js/datetime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lines = document.querySelectorAll(".retroButton");
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.classList.add("visible");
+                }, index * 200);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const lines = document.querySelectorAll('.info-text .line');
+            lines.forEach((line, index) => {
+                line.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.enlarge');
+            const overlay = document.getElementById('fullscreenOverlay');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+
+            images.forEach(image => {
+                image.addEventListener('click', function () {
+                    fullscreenImage.src = this.src;
+                    overlay.style.display = 'flex';
+                });
+            });
+
+            overlay.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+        });
+   </script>
+</body>
+</html>
