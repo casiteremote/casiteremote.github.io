@@ -292,8 +292,10 @@ ul li::marker {
 
 .info-text {
     font-size: 2vh;
-    /* background-color: red; */
+    max-height: 50vh;
+    overflow-y: auto;
 }
+
 
 .info-pic {
     max-height: 60vh;
@@ -303,6 +305,18 @@ ul li::marker {
 .info-pic img {
     max-height: 60vh;
     object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .info-text {
+        font-size: 1.75vh;
+        max-height: 35vh;
+  }
+
+  .info-pic img {
+        max-height: 30vh;
+        object-fit: contain;
+    }
 }
 
 
